@@ -1,3 +1,6 @@
+# base_page.py - тут мы храним методы которые применяются по всему проекту вообще, всё завернуто в класс, чтобы было удобно импортировать
+
+
 from selenium.common.exceptions import NoSuchElementException
 
 

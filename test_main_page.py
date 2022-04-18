@@ -2,6 +2,13 @@ from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 
 #tests in стиле Page Object
+# test_main_page.py - тут мы выполняем сами тесты
+# Здесь мы будем создавать функции, которым:
+# выдаём нужный для проверки линк
+# созаём в функции переменную page, которой передаём браузер из base_page.py(класс BasePage) и линк из шага №1
+# следом говорим "page, откройся", но методом из base_page.py(класс BasePage)
+# добавляем проверки, которые создавали методами в main_page.py
+
 def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     #link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
