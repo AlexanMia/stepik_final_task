@@ -18,7 +18,7 @@ def test_guest_can_add_product_to_basket(browser):
     #login_page.should_be_login_page()
 
     page.solve_quiz_and_get_code()
-    time.sleep(20)
+    time.sleep(15)
     page.should_be_message_about_adding()
     page.should_be_message_basket_total()
 
