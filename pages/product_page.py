@@ -1,5 +1,3 @@
-import time
-
 from .base_page import BasePage
 
 from .locators_product_page import ProductPageLocators
