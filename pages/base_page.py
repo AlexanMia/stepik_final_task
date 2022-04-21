@@ -48,7 +48,7 @@ class BasePage():
             print("No second alert presented")
 
 #Можно добавить в BasePage абстрактный метод, который проверяет, что элемент не появляется на странице в течение заданного времени:
-    def is_not_element_present(self, how, what, timeout=20):
+    def is_not_element_present(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
         except TimeoutException:
@@ -57,7 +57,7 @@ class BasePage():
         return False
 
 # почему-то не видно ожидания (закрывается сразу, после добавления в корзину
-    def is_disappeared(self, how, what, timeout=20):
+    def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException). \
                 until_not(EC.presence_of_element_located((how, what)))
