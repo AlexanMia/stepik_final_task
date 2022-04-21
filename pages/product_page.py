@@ -1,6 +1,6 @@
 from .base_page import BasePage
 
-from .locators_product_page import ProductPageLocators
+from .locators import ProductPageLocators
 import time
 
 
@@ -12,7 +12,6 @@ class ProductPage(BasePage):
 
     def should_be_button_add_to_basket(self):
         assert self.is_element_present(*ProductPageLocators.BUTTON_BASKET), "Button 'add to basket' is not presented"
-
 
 
     def should_be_message_about_adding(self):
@@ -41,7 +40,16 @@ class ProductPage(BasePage):
         # Проверяем, что цена товара присутствует в сообщении со стоимостью корзины
         assert product_price == message_basket_total, "No product price in the message"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
 
+
+
+
+    def should_be_disappeared(self):
+        assert self.is_dissappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is not disappeared"
 
 
 
