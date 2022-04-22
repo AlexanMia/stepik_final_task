@@ -1,6 +1,6 @@
 # base_page.py - тут мы храним методы которые применяются по всему проекту вообще, всё завернуто в класс, чтобы было удобно импортировать
 
-from .locators import BasePageLocators
+from .locators import BasePageLocators, BasketPageLocators
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException    # в начале файла
 import math
@@ -66,3 +66,8 @@ class BasePage():
 
         return True
 
+
+    def go_to_basket_page(self):
+
+        link = self.browser.find_element(*BasketPageLocators.BUTTON_BASKET_page)
+        link.click()
